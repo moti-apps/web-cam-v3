@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "build:github": "ng build --output-path docs --base-href /web-cam-v3",
+    "build:github": "ng build --output-path docs --base-href /moti-apps/",
     "test": "ng test"
   },
   "private": true,
