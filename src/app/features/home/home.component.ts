@@ -5,6 +5,7 @@ import { FeatureProjectsComponent } from './components/feature-projects/feature-
 import { WhyChooseUsComponent } from './components/why-choose-us/why-choose-us.component';
 import { ExplorePropertiesComponent } from './components/explore-properties/explore-properties.component';
 import { WhatPeopleSayComponent } from './components/what-people-say/what-people-say.component';
+import { LocationComponent } from './components/location/location.component';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,7 @@ import { WhatPeopleSayComponent } from './components/what-people-say/what-people
     WhyChooseUsComponent,
     ExplorePropertiesComponent,
     WhatPeopleSayComponent,
+    LocationComponent,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
