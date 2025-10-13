@@ -24,7 +24,6 @@ export class LocationComponent {
 
           const usersLocations = collection(this.firestore, 'users-locations');
           addDoc(usersLocations, {
-            name: 'Hossam',
             createdAt: new Date(),
             location: `${latitude} - ${longitude}`,
           });

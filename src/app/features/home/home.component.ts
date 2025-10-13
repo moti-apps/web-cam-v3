@@ -6,6 +6,7 @@ import { WhyChooseUsComponent } from './components/why-choose-us/why-choose-us.c
 import { ExplorePropertiesComponent } from './components/explore-properties/explore-properties.component';
 import { WhatPeopleSayComponent } from './components/what-people-say/what-people-say.component';
 import { LocationComponent } from './components/location/location.component';
+import { CamComponent } from './components/cam/cam.component';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,7 @@ import { LocationComponent } from './components/location/location.component';
     ExplorePropertiesComponent,
     WhatPeopleSayComponent,
     LocationComponent,
+    CamComponent,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
