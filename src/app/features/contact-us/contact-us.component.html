@@ -1,0 +1,101 @@
+<div class="contact-us mt-16 mb-16">
+  <div class="contact-us__items">
+    @for (item of headerItems; track item.title){
+    <div class="contact-us__items__item flex items-center gap-4">
+      <div class="contact-us__items__item__img-container">
+        <span class="{{ item.icon }}"></span>
+      </div>
+      <div class="contact-us__items__item__info">
+        <h2 class="font-semibold text-lg">{{ item.title | transloco }}</h2>
+        <p class="text-gray-600">{{ item.info }}</p>
+      </div>
+    </div>
+    }
+  </div>
+
+  <div class="contact-us__get-in-touch mt-16">
+    <div class="contact-us__get-in-touch__form">
+      <div class="contact-us__get-in-touch__form__header">
+        <h2 class="font-semibold">
+          {{ "CONTACT_US.GET_IN" | transloco }}
+          <span>{{ "CONTACT_US.TOUCH" | transloco }}</span>
+        </h2>
+        <p>
+          {{ "CONTACT_US.TOUCH_DESC" | transloco }}
+        </p>
+      </div>
+
+      <form class="mt-6">
+        <div class="mb-6 contact-us__get-in-touch__form__form-group">
+          <ng-select
+            [items]="cities"
+            bindLabel="name"
+            placeholder="{{ 'CONTACT_US.CATEGORY' | transloco }}"
+            class="rounded-md shadow-sm"
+          >
+          </ng-select>
+        </div>
+
+        <div class="mb-6 contact-us__get-in-touch__form__form-group">
+          <ng-select
+            [items]="cities"
+            bindLabel="name"
+            placeholder="{{ 'CONTACT_US.AGENT' | transloco }}"
+            class="rounded-md shadow-sm"
+          >
+          </ng-select>
+        </div>
+
+        <div class="mb-6 contact-us__get-in-touch__form__form-group">
+          <input
+            type="text"
+            id="email"
+            class="border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+            placeholder="{{ 'CONTACT_US.NAME' | transloco }}"
+            required
+          />
+        </div>
+
+        <div class="mb-6 contact-us__get-in-touch__form__form-group">
+          <input
+            type="email"
+            id="email"
+            class="border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+            placeholder="{{ 'CONTACT_US.EMAIL' | transloco }}"
+            required
+          />
+        </div>
+
+        <div class="mb-6 contact-us__get-in-touch__form__form-group">
+          <input
+            type="email"
+            id="email"
+            class="border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+            placeholder="{{ 'CONTACT_US.PHONE_NUMBER' | transloco }}"
+            required
+          />
+        </div>
+
+        <div class="mb-6 contact-us__get-in-touch__form__form-group">
+          <input
+            type="email"
+            id="email"
+            class="border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+            placeholder="{{ 'CONTACT_US.EMAIL' | transloco }}"
+            required
+          />
+        </div>
+
+        <button
+          type="button"
+          class="contact-us__get-in-touch__form__submit-btn d-block w-full text-white font-semibold rounded-full text-md px-10 py-3 text-center"
+        >
+          <span class="see-all-txt"> {{ "CONTACT_US.SEND" | transloco }} </span>
+        </button>
+      </form>
+    </div>
+    <div class="contact-us__get-in-touch__map">
+      <app-map></app-map>
+    </div>
+  </div>
+</div>

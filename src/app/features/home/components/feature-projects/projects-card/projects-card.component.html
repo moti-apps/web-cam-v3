@@ -1,0 +1,34 @@
+<div
+  class="project-card w-full bg-white overflow-hidden border border-gray-200 rounded-xl shadow-lg"
+>
+  <div class="project-card__img-container">
+    <img class="w-full" [src]="card?.imageUrl" alt="" />
+  </div>
+  <div
+    class="project-card__content px-4 py-4 flex items-center justify-between"
+  >
+    <div>
+      <a>
+        <h5
+          class="project-card__content__title mb-2 font-semibold tracking-tight"
+        >
+          {{ card?.title | transloco }}
+        </h5>
+      </a>
+      <p
+        class="project-card__content__description mb-3 text-base font-normal text-gray-700"
+      >
+        {{ card?.propertiesCount }}
+        {{ card?.description | transloco }}
+      </p>
+    </div>
+
+    <div>
+      <button
+        class="project-card__content__action-btn shadow-xl px-4 py-3 rounded-xl"
+      >
+        <img src="assets/images/arrow.svg" alt="" />
+      </button>
+    </div>
+  </div>
+</div>

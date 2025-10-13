@@ -1,0 +1,18 @@
+@use "variables" as *;
+
+.what-people-say {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  @media (max-width: 991px) {
+    display: block;
+  }
+  &__title {
+    font-size: 40px;
+    font-weight: 700;
+    color: $dark_blue_color;
+    @media (max-width: 991px) {
+      margin-bottom: 2rem;
+    }
+  }
+}

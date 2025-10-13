@@ -1,0 +1,56 @@
+@use "variables" as *;
+nav ul li a {
+  &:hover {
+    color: $primary_color;
+  }
+}
+.active-link a {
+  color: $primary_color;
+  font-weight: bold;
+}
+
+.styled-nav {
+  align-items: start !important;
+  background: url("../../../../assets/images/nav-background.svg");
+  background-size: cover;
+  height: 274px;
+  ul {
+    li {
+      a {
+        color: $white_color !important;
+      }
+    }
+
+    li:not(.active-link) {
+      a {
+        font-weight: 400;
+      }
+    }
+  }
+  .flat-btn {
+    background: none !important;
+    color: $semi_white_color !important;
+  }
+  .white-color {
+    color: $semi_white_color !important;
+  }
+
+  .header {
+    text-align: center;
+    padding-top: 3rem;
+    .title {
+      font-size: 40px;
+      font-weight: 600;
+      color: $white_color;
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+    .subtitle {
+      font-size: 16px;
+      margin-top: 5px;
+      display: block;
+      color: $semi_white_color;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@use "variables" as *;
+
+.properties-card {
+  position: relative;
+  background-size: cover;
+  &__badge {
+    margin: 1.5rem 1.5rem 0;
+    width: max-content;
+    background-color: $gold_color;
+    color: $dark-text-color;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  &__content {
+    background-color: $white_color;
+    margin: 10rem 1.5rem 1.5rem;
+    border-radius: 10px;
+    &__title {
+      color: $dark-text-color;
+      font-weight: 500;
+      font-size: 20px;
+      .price {
+        color: $orange_color;
+      }
+    }
+    &__description {
+      color: $dark-text-color;
+      font-size: 16px;
+      margin-top: 0.5rem;
+    }
+    &__footer {
+      gap: 2rem;
+      &__price {
+        color: $orange_color;
+        font-size: 21px;
+      }
+      &__actions {
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        span {
+          display: flex;
+          align-items: center;
+          gap: 0.3rem;
+        }
+        .line {
+          display: inline-block;
+          width: 1px;
+          background-color: $gray_color;
+          height: 16px;
+          opacity: 0.2;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,145 @@
+<div class="prop-details mt-10">
+  <!-- Slider section -->
+  <div class="prop-details__slider-imgs">
+    <div class="prop-details__slider-imgs__preview">
+      <img [src]="previewSrc" alt="" />
+    </div>
+    <div class="prop-details__slider-imgs__thumbnails">
+      @for (thumbnail of thumbnails; track thumbnail){
+      <div
+        class="prop-details__slider-imgs__thumbnails__item"
+        (click)="onThumbnilClick(thumbnail)"
+      >
+        <img [src]="thumbnail" alt="" />
+      </div>
+      }
+    </div>
+  </div>
+
+  <!-- item details section-->
+  <div class="prop-details__item-details">
+    <div class="prop-details__item-details__info">
+      <!-- title -->
+      <h2 class="prop-details__item-details__info__title">
+        {{ "PROPERTIES.IMG_DESC" | transloco }}
+      </h2>
+
+      <!-- subitems-->
+      <div class="prop-details__item-details__info__subtitle-items">
+        <span
+          ><span class="icon-location"></span>
+          {{ "PROPERTIES.PROPERTIES_SUB_DESC" | transloco }}</span
+        >
+        <ul class="list">
+          <li>
+            <span class="icon-bed"></span> 4 {{ "PROPERTIES.BEDS" | transloco }}
+          </li>
+          <li>
+            <span class="icon-Icon"></span> 1
+            {{ "PROPERTIES.BATHS" | transloco }}
+          </li>
+          <li>
+            <span class="icon-copy"></span> 400
+            {{ "PROPERTIES.SQFT" | transloco }}
+          </li>
+        </ul>
+      </div>
+
+      <!-- Amenities section-->
+      <div class="prop-details__item-details__info__amenities">
+        <h2 class="prop-details__item-details__info__amenities__title">
+          {{ "PROPERTIES.AMENITIES_FEATURES" | transloco }}
+        </h2>
+        <ul class="prop-details__item-details__info__amenities__subitems list">
+          @for(item of AmenitiesFeatures; track item.text){
+          <li class="text-center">
+            <span [ngClass]="item.icon"></span>
+            <span class="block">{{ item.text | transloco }}</span>
+          </li>
+
+          }
+        </ul>
+      </div>
+
+      <!-- Description section-->
+      <div class="prop-details__item-details__info__description mt-8">
+        <h2
+          class="prop-details__item-details__info__description__title font-semibold"
+        >
+          {{ "PROPERTIES.PROPERTIES_DESC_TITLE" | transloco }}
+        </h2>
+        <p class="prop-details__item-details__info__description__desc">
+          {{ "PROPERTIES.PROPERTIES_DESC" | transloco }}
+        </p>
+      </div>
+    </div>
+    <div class="prop-details__item-details__cards">
+      <div class="prop-details__item-details__cards__card">
+        <h2 class="prop-details__item-details__cards__card__title">
+          {{ "PROPERTIES.DETAILS" | transloco }}
+        </h2>
+        <ul class="prop-details__item-details__cards__card__list list">
+          <li>
+            <span class="icon-home"></span>
+            <span> {{ "PROPERTIES.FOR_SALE" | transloco }} </span>
+          </li>
+          <li>
+            <span class="icon-home"></span>
+            <span> {{ "PROPERTIES.APARTMENT" | transloco }}</span>
+          </li>
+          <li>
+            <span class="icon-offer"></span>
+            <span>{{ "PROPERTIES.OFFERS" | transloco }}</span>
+          </li>
+        </ul>
+        <button
+          class="prop-details__item-details__cards__card__action-btn font-bold"
+        >
+          $ 250
+        </button>
+      </div>
+
+      <div class="prop-details__item-details__cards__card">
+        <h2 class="prop-details__item-details__cards__card__title">
+          {{ "PROPERTIES.ABOUT_AN_AGENT" | transloco }}
+        </h2>
+        <div class="prop-details__item-details__cards__card__agent-info">
+          <span class="letter"> A </span>
+          <p>
+            <span class="name">Amr sherif</span>
+            <span class="review"
+              >9.7 {{ "PROPERTIES.REVIEW" | transloco }}</span
+            >
+          </p>
+        </div>
+        <button class="prop-details__item-details__cards__card__action-btn">
+          {{ "PROPERTIES.CONTACT_AN_AGENT" | transloco }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Visitor Comments-->
+  <div class="prop-details__visitor-comments mt-8">
+    <div class="prop-details__visitor-comments__slider">
+      <h2 class="prop-details__visitor-comments__slider__title">
+        {{ "PROPERTIES.VISITOR_COMMENTS" | transloco }}
+      </h2>
+      <div class="mt-8" style="width: 90%">
+        <app-slider-review></app-slider-review>
+      </div>
+    </div>
+    <div class="prop-details__visitor-comments__mapping">
+      <h2 class="prop-details__visitor-comments__mapping__title">
+        {{ "PROPERTIES.MAPPING" | transloco }}
+      </h2>
+      <div>
+        <app-map></app-map>
+      </div>
+    </div>
+  </div>
+
+  <div class="similar-section">
+    <app-similar-slider></app-similar-slider>
+  </div>
+</div>

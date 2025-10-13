@@ -1,0 +1,79 @@
+@use "variables" as *;
+
+.footer {
+  &__light {
+    padding: 1rem 3rem !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 1rem 0;
+    background-color: $gray_color2;
+    @media (max-width: 767px) {
+      display: block;
+      padding: 1rem !important;
+    }
+    &__info {
+      text-align: start;
+      color: $dark-text-color;
+    }
+    &__right {
+      &__logo {
+        width: 150px;
+        height: 70px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      &__social-media {
+        display: flex;
+        gap: 2rem;
+      }
+    }
+  }
+
+  &__dark {
+    padding: 3rem 3rem 0;
+    background: $primary_color;
+    @media (max-width: 600px) {
+      padding: 1rem 1rem 0;
+    }
+    &__logo-container {
+    }
+    &__tabs {
+      margin-top: 1.7rem;
+      &__list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 3rem;
+        @media (max-width: 600px) {
+          gap: 1rem;
+          margin-bottom: 1rem;
+        }
+        li {
+          cursor: pointer;
+          a {
+            color: $white_color;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+      &__social-media {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+        a {
+          color: $white_color;
+        }
+      }
+    }
+    &__copyright {
+      color: $white_color;
+      padding-bottom: 1.5rem;
+    }
+  }
+}

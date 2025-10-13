@@ -1,0 +1,66 @@
+@use "variables" as *;
+.person-card {
+  // grid-column: span 2;
+  width: 90%;
+  position: relative;
+  &__img-container {
+    width: 68px;
+    height: 67px;
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid $border_color;
+    }
+  }
+  &__info {
+    margin-left: 1rem;
+    background: $white_color;
+    padding: 0.7rem 1.7rem;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(153, 153, 153, 0.1490196078);
+    position: relative;
+    z-index: 2;
+    inset-inline-start: 1rem;
+    bottom: 0;
+    width: 85%;
+    &__comment {
+      font-size: 18px;
+      font-weight: 400;
+      color: $dark_text_color2;
+    }
+    &__name {
+      margin-top: 2rem;
+      font-size: 17px;
+      color: $dark_text_color3;
+      font-weight: 500;
+    }
+    &__role {
+      font-size: 14px;
+      color: $dark_text_color4;
+    }
+  }
+  &__signature {
+    margin-top: -9rem;
+    padding: 10rem 1rem 1rem;
+    margin-inline-start: 5.5rem;
+    width: 85%;
+    background-image: linear-gradient(90deg, #9999990d 76%, #fff 100%);
+    border: 1px solid $light_border_color;
+    border-radius: 10px;
+
+    &__name {
+      font-size: 17px;
+      font-weight: 500;
+      color: $dark_text_color3;
+    }
+    &__title {
+      margin-top: 0.3rem;
+      font-size: 14px;
+      color: $dark_text_color4;
+    }
+  }
+}

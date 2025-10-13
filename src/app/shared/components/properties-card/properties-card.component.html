@@ -1,0 +1,84 @@
+<div
+  class="properties-card cursor-pointer bg-white border border-gray-200 rounded-xl shadow-sm"
+  [style.background-image]="!isClassic ? 'url(' + card?.imageUrl + ')' : 'none'"
+  [style.background-size]="!isClassic ? 'cover' : 'auto'"
+>
+  <h2
+    class="properties-card__badge"
+    [style.position]="isClassic ? 'absolute' : ''"
+    [style.margin]="isClassic ? '2.5rem 2.5rem 0' : '1.5rem 1.5rem 0'"
+  >
+    {{ card?.badge }}
+  </h2>
+  @if(isClassic){
+  <div class="img-container h-72 p-4">
+    <img class="h-full w-full rounded-lg" [src]="card?.imageUrl" alt="" />
+  </div>
+  }
+
+  <div
+    class="properties-card__content p-5"
+    [style.margin]="isClassic ? '0' : '10rem 1.5rem 1.5rem'"
+    [style.padding]="isClassic ? '0 1.25rem 1.25rem' : '1.25rem'"
+  >
+    <h5
+      class="properties-card__content__title flex items-center justify-between"
+    >
+      <span>{{ card?.title }}</span>
+      @if(isClassic) {
+      <span class="font-bold price">
+        {{ card?.price }}
+      </span>
+      }
+    </h5>
+
+    <p class="properties-card__content__description">
+      <span class="icon-location me-1"></span> <span>{{ card?.location }}</span>
+    </p>
+    <div
+      class="properties-card__content__footer flex items-center justify-between mt-4"
+    >
+      @if(!isClassic) {
+      <div class="properties-card__content__footer__price font-semibold">
+        {{ card?.price }}
+      </div>
+      }
+
+      <div
+        class="properties-card__content__footer__actions flex"
+        [style.width]="isClassic ? '80%' : '100%'"
+      >
+        <span>
+          <img src="assets/images/bed.svg" alt="" />
+          <small class="text-base ms-2 flex gap-1"
+            >{{ card?.beds }} @if(isClassic){<span>{{
+              "PROPERTIES.BEDS" | transloco
+            }}</span
+            >}
+          </small>
+        </span>
+        <small class="line"></small>
+        <span>
+          <img src="assets/images/shower.svg" alt="" />
+          <small class="text-base ms-2 flex gap-1">
+            {{ card?.baths }} @if(isClassic){<span>{{
+              "PROPERTIES.BATHS" | transloco
+            }}</span
+            >}
+          </small>
+        </span>
+        <small class="line"></small>
+        <span>
+          <span class="icon-copy"></span>
+
+          <small class="text-base ms-2 flex gap-1"
+            >{{ card?.garages }} @if(isClassic){<span>{{
+              "PROPERTIES.SQFT" | transloco
+            }}</span
+            >}
+          </small>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

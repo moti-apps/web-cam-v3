@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "@ng-select/ng-select/themes/default.theme.css";
+@import "assets/icons/style.css";
+@import "./assets/styles/variables.scss";
+
+ng-select input {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+ng-select input:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.ng-select-container {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+#lang-dropdown-container {
+  .light-dropdown {
+    .ng-select {
+      .ng-select-container {
+        background: none !important;
+        color: $white_color;
+      }
+    }
+  }
+
+  .dark-dropdown {
+    .ng-select {
+      .ng-select-container {
+        background: none !important;
+        color: $primary_color;
+      }
+    }
+  }
+}
+/////////////
+p-carousel .p-carousel-content {
+  .p-carousel-viewport {
+    height: 370px !important;
+  }
+  position: relative;
+
+  .p-carousel-prev-button,
+  .p-carousel-next-button {
+    position: absolute;
+    z-index: 9;
+    inset-inline-end: 0;
+    svg {
+      width: 19px;
+    }
+
+    &.p-disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  .p-carousel-prev-button {
+    top: 40%;
+  }
+  .p-carousel-next-button {
+    bottom: 40%;
+  }
+}
+.p-carousel-indicator-list {
+  display: none !important;
+}
+
+//pagination style
+.p-paginator-page.p-paginator-page-selected {
+  border: 2px solid $primary_color !important;
+  background: $white_color !important;
+}
+.p-paginator {
+  .p-paginator-first {
+    display: none !important;
+  }
+
+  .p-paginator-last {
+    display: none !important;
+  }
+
+  .p-paginator-prev {
+    background-color: $primary_color !important;
+    color: $white_color !important;
+  }
+
+  .p-paginator-next {
+    background-color: $primary_color !important;
+    color: $white_color !important;
+  }
+
+  .p-ripple {
+    border-radius: 12px !important;
+    font-weight: bold !important;
+  }
+  .p-disabled {
+    background-color: gray !important;
+    color: $white_color !important;
+  }
+}
+
+#similar-slider {
+  p-carousel {
+    .p-carousel-content {
+      // Shared button styles
+      .p-carousel-next-button,
+      .p-carousel-prev-button {
+        background: $primary_color;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+
+        svg {
+          width: 15px !important;
+        }
+
+        * {
+          color: $white_color;
+          transition: color 0.3s ease;
+        }
+
+        &:hover {
+          * {
+            color: $primary_color;
+          }
+        }
+      }
+
+      // Position overrides
+      .p-carousel-next-button {
+        top: -51% !important;
+        &:lang(ar) {
+          margin-inline-end: 55px !important;
+        }
+      }
+
+      .p-carousel-prev-button {
+        top: 1px !important;
+        inset-inline-end: 55px;
+        &:lang(ar) {
+          margin-inline-end: -55px !important;
+        }
+      }
+
+      .p-carousel-viewport {
+        height: auto !important;
+      }
+    }
+  }
+
+  .p-carousel-item {
+    padding: 4rem 1rem 0;
+  }
+}
+
+.arrow-icon {
+  &:lang(ar) {
+    transform: rotate(-180deg) !important;
+  }
+}

@@ -1,0 +1,43 @@
+@use "variables" as *;
+
+.properties {
+  &__filter {
+    &__items {
+      &__item {
+        cursor: pointer;
+        color: $primary_color;
+        transition: all 0.3s ease-in-out;
+        span {
+          &::before {
+            color: $primary_color !important;
+          }
+        }
+        &:hover {
+          background-color: $primary_color;
+          color: $white_color;
+          span {
+            color: $white_color !important;
+            &:before {
+              color: $white_color !important;
+            }
+          }
+        }
+      }
+    }
+    &__clear-filter {
+      color: $gray_color;
+      text-decoration: underline;
+      min-width: max-content;
+    }
+  }
+}
+
+.active-item {
+  background: $primary_color;
+  color: $white_color;
+  span {
+    &::before {
+      color: $white_color !important;
+    }
+  }
+}

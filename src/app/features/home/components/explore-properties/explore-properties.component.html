@@ -1,0 +1,63 @@
+<div class="explore-properties mt-16 lg:mt-36">
+  <div class="explore-properties__header">
+    <div class="explore-properties__header__info">
+      <div class="explore-properties__header__info__title font-semibold">
+        {{ "EXPLORE_PROPERTIES.TITLE" | transloco }}
+      </div>
+      <div class="explore-properties__header__info__description">
+        {{ "EXPLORE_PROPERTIES.SUB_TITLE" | transloco }}
+      </div>
+    </div>
+    <div class="explore-properties__header__filter">
+      <div class="w-32">
+        <ng-select
+          [items]="cities"
+          bindLabel="name"
+          placeholder="{{ 'EXPLORE_PROPERTIES.LOCATION' | transloco }}"
+          [(ngModel)]="selectedCity"
+          class="rounded-md border-gray-300 shadow-sm"
+        >
+        </ng-select>
+      </div>
+      <div class="w-32">
+        <ng-select
+          [items]="cities"
+          bindLabel="name"
+          placeholder="{{ 'EXPLORE_PROPERTIES.TYPE' | transloco }}"
+          [(ngModel)]="selectedCity"
+          class="rounded-md border-gray-300 shadow-sm"
+        >
+        </ng-select>
+      </div>
+      <div class="w-32">
+        <ng-select
+          [items]="cities"
+          bindLabel="name"
+          placeholder="{{ 'EXPLORE_PROPERTIES.CATEGORY' | transloco }}"
+          [(ngModel)]="selectedCity"
+          class="rounded-md border-gray-300 shadow-sm"
+        >
+        </ng-select>
+      </div>
+    </div>
+  </div>
+  <div class="explore-properties__content mt-12">
+    @for(card of propertiesCards; track card.title) {
+    <app-properties-card
+      [card]="card"
+      [isClassic]="false"
+    ></app-properties-card>
+    }
+  </div>
+  <div class="explore-properties__see-all flex justify-center">
+    <button
+      type="button"
+      class="text-white rounded-full text-sm px-8 py-4 text-center me-2 mb-2 flex items-center"
+    >
+      <span class="see-all-txt">
+        {{ "EXPLORE_PROPERTIES.SEE_ALL" | transloco }}
+      </span>
+      <span class="arrow-icon icon-arrow-right2 mt-1 ms-2"></span>
+    </button>
+  </div>
+</div>
