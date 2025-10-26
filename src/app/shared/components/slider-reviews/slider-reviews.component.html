@@ -10,25 +10,20 @@
     <ng-template let-person #item>
       <div class="person-card">
         <div class="person-card__img-container">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUBqaVl--yRVOLK7iFJ8okQG5f0mOujPYskCrWUxYON4Tg6dqaMjxDYGBJJSl5Yvi2dsQ&usqp=CAU"
-            alt=""
-          />
+          <img [src]="person.image" alt="" />
         </div>
         <div class="person-card__info">
           <p class="person-card__info__comment">
-            “Moonstone helped me find my perfect home quickly and smoothly, and
-            the support and guidance from the team was professional and
-            reliable..”
+            {{ person.description }}
           </p>
-          <p class="person-card__info__name">Mike taylor</p>
-          <p class="person-card__info__role">Marketing Manager</p>
+          <p class="person-card__info__name">{{ person.name }}</p>
+          <p class="person-card__info__role">{{ person.job }}</p>
         </div>
         <div class="person-card__signature">
           <p class="person-card__signature__name text-sm text-gray-500">
-            Chris Thomas
+            <!-- {{ person.code }} -->
           </p>
-          <p class="person-card__signature__title text-sm">CEO of Red Button</p>
+          <!-- <p class="person-card__signature__title text-sm">CEO of Red Button</p> -->
         </div>
       </div>
     </ng-template>

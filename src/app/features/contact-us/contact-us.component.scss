@@ -4,6 +4,9 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
     &__item {
       width: auto;
       &__img-container {
@@ -33,7 +36,7 @@
   }
   &__get-in-touch {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    // grid-template-columns: 1fr 1fr;
     gap: 4rem;
     &__form {
       &__header {

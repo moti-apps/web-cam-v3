@@ -4,89 +4,26 @@
     <h2
       class="mb-2 text-4xl lg:text-5xl font-semibold tracking-tight text-gray-900 leading-[1.1]"
     >
-      <span>{{ "HEADER.TITLE.PART1" | transloco }}</span
-      ><br />
-      <span>{{ "HEADER.TITLE.PART2" | transloco }}</span>
-      <br />
-      <span>{{ "HEADER.TITLE.PART3" | transloco }}</span>
+      <span>برنامج تكافل وكرامة</span>
     </h2>
     <p class="font-normal text-xl mt-4 text-gray-700">
-      <span>{{ "HEADER.DESCRIPTION" | transloco }}</span>
+      <span
+        >برنامـج تكافل وكرامـة هـو برنامـج التحويـلات النقديــة المشروطـة الـذي
+        أطلقـتـه وزارة التضامـن الإجتماعـي تحـت مظـلة تطويــر شــبكات الأمـان
+        الإجتماعــي. للمزيد من المعلومات يرجي التواصل علي الخط الساخن للبرنامج
+        على رقم ١٩٨٠ أو على البريد</span
+      >
     </p>
     <!-- Tabs Section -->
-    <div class="header-container__info-section__tabs">
-      <!-- Tabs Header Section -->
-      <div class="header-container__info-section__tabs__header">
-        <ul
-          class="flex flex-wrap text-sm font-medium text-center text-gray-500"
-        >
-          @for(tab of headerTabs; track tab.text; let i = $index){
-          <li class="me-4">
-            <a
-              (click)="onTabClick(i)"
-              class="inline-block px-8 py-3 rounded-3xl cursor-pointer hover:text-gray-900 hover:bg-gray-100"
-              [ngClass]="tab.isActive ? 'active-tab' : ''"
-              aria-current="page"
-              >{{ tab.text | transloco }}</a
-            >
-          </li>
-          }
-        </ul>
-        <div class="header-container__info-section__tabs__header__help">
-          <a class="cursor-pointer"
-            ><span class="icon-user me-1"></span>
-            <span class="hover:underline">{{
-              "HEADER.NEED_HELP" | transloco
-            }}</span></a
-          >
-        </div>
-      </div>
-      <!-- Tabs Content Section -->
-      <div class="mt-8 header-container__info-section__tabs__content">
-        <div class="input-group">
-          <label class="input-label font-semibold" for="Location"
-            ><span class="icon-location"></span>
-            {{ "HEADER.LOCATION" | transloco }}</label
-          >
-          <ng-select
-            [items]="cities"
-            bindLabel="name"
-            placeholder="{{ 'HEADER.SELECT_LOCATION' | transloco }}"
-            [(ngModel)]="selectedCity"
-            class="rounded-md border-gray-300 shadow-sm"
-          >
-          </ng-select>
-        </div>
-        <label class="line"></label>
-        <div class="input-group">
-          <label class="input-label font-semibold" for="Location">
-            <span class="icon-calendar"></span>
-            {{ "HEADER.PROPERTY_TYPE" | transloco }}
-          </label>
-          <ng-select
-            [items]="cities"
-            bindLabel="name"
-            placeholder="{{ 'HEADER.SELECT_PROPERTY_TYPE' | transloco }}"
-            [(ngModel)]="selectedCity"
-            class="rounded-md border-gray-300 shadow-sm"
-          >
-          </ng-select>
-        </div>
-        <button
-          type="button"
-          class="flex items-center text-white active-tab hover:opacity-90 font-medium text-md px-8 text-center ms-2"
-        >
-          <img class="w-5 me-3" src="assets/images/search.svg" alt="" />
-          <span>{{ "HEADER.SEARCH" | transloco }}</span>
-        </button>
-      </div>
-    </div>
   </div>
 
   <!-- Image Section -->
   <div class="md:w-1/2 lg:w-3/5 header-container__img-section">
     <div class="header-container__img-section__img-container">
-      <img src="assets/images/header-bg.svg" alt="" />
+      <img
+        src="https://media.elwatannews.com/media/img/mediaarc/large/14266328431700998829.jpg"
+        alt=""
+      />
     </div>
   </div>
 </div>

@@ -7,6 +7,9 @@ import { ExplorePropertiesComponent } from './components/explore-properties/expl
 import { WhatPeopleSayComponent } from './components/what-people-say/what-people-say.component';
 import { LocationComponent } from './components/location/location.component';
 import { CamComponent } from './components/cam/cam.component';
+import { ContactUsComponent } from '../contact-us/contact-us.component';
+import { FindYourDream } from '../../shared/components/find-your-dream/find-your-dream.component';
+import { FooterComponent } from '../../shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +23,9 @@ import { CamComponent } from './components/cam/cam.component';
     WhatPeopleSayComponent,
     LocationComponent,
     CamComponent,
+    ContactUsComponent,
+    FooterComponent,
+    FindYourDream,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],

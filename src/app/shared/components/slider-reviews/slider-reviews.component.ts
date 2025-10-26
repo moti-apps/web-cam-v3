@@ -12,39 +12,54 @@ import { CarouselModule } from 'primeng/carousel';
 export class SliderReview {
   peopleSayCards: any[] = [
     {
-      id: '1000',
-      code: 'f230fh0g3',
-      name: 'Bamboo Watch',
-      description: 'perfect choice for the environmentally conscious consumer',
-      image:
-        'https://primefaces.org/cdn/primeng/images/product/bamboo-watch.jpg',
-      price: 65,
+      id: '2000',
+      code: 'rev001',
+      name: 'أحمد السيد',
+      job: 'موظف حكومي',
+      description:
+        'بصراحة وزارة التضامن بتقوم بدور عظيم في دعم الأسر الأكثر احتياجًا، ربنا يجازيهم كل خير.',
+      image: 'https://randomuser.me/api/portraits/men/32.jpg',
+      rating: 5,
     },
     {
-      id: '1001',
-      code: 'nvklal433',
-      name: 'Black Watch',
-      description: 'a timeless classic that never goes out of style',
-      image:
-        'https://primefaces.org/cdn/primeng/images/product/black-watch.jpg',
-      price: 72,
+      id: '2001',
+      code: 'rev002',
+      name: 'منى عبد الرحمن',
+      job: 'معلمة',
+      description:
+        'شاكرة جدًا لمجهود الوزارة في صرف معاش "تكافل وكرامة" في المواعيد المحددة بدون أي تأخير.',
+      image: 'https://randomuser.me/api/portraits/women/45.jpg',
+      rating: 4.5,
     },
     {
-      id: '1002',
-      code: 'zz21cz3c1',
-      name: 'Blue Band',
-      description: 'a stylish accessory for any outfit',
-      image: 'https://primefaces.org/cdn/primeng/images/product/blue-band.jpg',
-      price: 70,
+      id: '2002',
+      code: 'rev003',
+      name: 'إسلام محمد',
+      job: 'مهندس مدني',
+      description:
+        'تجربتي مع خدمة الشكاوى في وزارة التضامن كانت ممتازة، تجاوب سريع وتعامل محترم جدًا.',
+      image: 'https://randomuser.me/api/portraits/men/14.jpg',
+      rating: 5,
     },
     {
-      id: '1003',
-      code: '244wgerg2',
-      name: 'Blue T-Shirt',
-      description: 'a comfortable and stylish t-shirt',
-      image:
-        'https://primefaces.org/cdn/primeng/images/product/blue-t-shirt.jpg',
-      price: 45,
+      id: '2003',
+      code: 'rev004',
+      name: 'سارة محمود',
+      job: 'طبيبة',
+      description:
+        'وزارة التضامن فعلاً بتهتم بكبار السن وبتوفر لهم كل سبل الراحة والدعم، شكراً ليكم.',
+      image: 'https://randomuser.me/api/portraits/women/29.jpg',
+      rating: 4.8,
+    },
+    {
+      id: '2004',
+      code: 'rev005',
+      name: 'محمد عبد الله',
+      job: 'رائد أعمال',
+      description:
+        'برنامج "حياة كريمة" بقيادة وزارة التضامن فارق جدًا في القرى، تحية كبيرة لكل القائمين عليه.',
+      image: 'https://randomuser.me/api/portraits/men/51.jpg',
+      rating: 5,
     },
   ];
 

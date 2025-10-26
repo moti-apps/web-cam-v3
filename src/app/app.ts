@@ -5,7 +5,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { FindYourDream } from './shared/components/find-your-dream/find-your-dream.component';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavBarComponent, FooterComponent, FindYourDream],
+  imports: [RouterOutlet, NavBarComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

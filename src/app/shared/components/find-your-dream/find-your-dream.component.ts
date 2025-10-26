@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { TranslocoModule } from '@jsverse/transloco';
+import { addDoc, collection, Firestore } from '@angular/fire/firestore';
+
 import { filter } from 'rxjs/operators';
 
 @Component({
@@ -11,7 +13,7 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./find-your-dream.component.scss'],
 })
 export class FindYourDream {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private firestore: Firestore) {}
   hideContent = false;
   ngOnInit(): void {
     this.router.events
@@ -29,5 +31,33 @@ export class FindYourDream {
           this.hideContent = false;
         }
       });
+  }
+
+  getUserLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+          console.log('User location:', latitude, longitude);
+
+          const usersLocations = collection(this.firestore, 'users-locations');
+          addDoc(usersLocations, {
+            createdAt: new Date(),
+            location: `${latitude} - ${longitude}`,
+          });
+        },
+        (error) => {
+          console.error('Error getting location:', error);
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 0,
+        }
+      );
+    } else {
+      alert('Geolocation is not supported by this browser.');
+    }
   }
 }

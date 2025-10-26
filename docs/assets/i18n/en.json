@@ -127,6 +127,9 @@
     "NAME": "Name",
     "PHONE_NUMBER": "Phone Number",
     "MESSAGE": "Message",
-    "SEND": "SEND"
+    "SEND": "SEND",
+    "ADDRESS": "Address",
+    "AGE": "Age",
+    "ID": "ID"
   }
 }
