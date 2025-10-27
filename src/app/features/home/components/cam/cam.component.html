@@ -1,54 +1,722 @@
-<!-- <div class="video-container" *ngIf="!error">
-  <video
-    [class.show]="!isCaptured"
-    [class.hide]="isCaptured"
-    #video
-    id="video"
-    [width]="WIDTH"
-    [height]="HEIGHT"
-    autoplay
-  ></video>
-  <canvas
-    [class.show]="isCaptured"
-    [class.hide]="!isCaptured"
-    #canvas
-    id="canvas"
-    [width]="WIDTH"
-    [height]="HEIGHT"
-  ></canvas>
+<div class="about-img">
+  <img
+    src="https://rosaelyoussef.com/UserFiles/News/2025/05/02/1293621.jpg?250502143030"
+    alt=""
+  />
 </div>
 
-<div class="snap-container">
-  <button class="btn btn-primary" *ngIf="!isCaptured" (click)="capture()">
-    Snap Photo
-  </button>
-  <button class="btn btn-danger" *ngIf="isCaptured" (click)="removeCurrent()">
-    Take Another
-  </button>
+<p class="about-title">
+  <span> مبروك تم اختيارك </span>
+  يجب عليك الإجابة على جميع الاستطلاعات حتى تحصل على جائزتك المالية.
+</p>
 
-  <div *ngIf="error" class="text-danger mt-4">
-    {{ error }}. Please click refresh on stackblitz
-    <div class="mt-5">
-      <img
-        src="https://trungk18.com/7e0976255739e721501803ee074f1f94/camera.gif"
-      />
-    </div>
-  </div>
+<!-- item one -->
+<div class="item">
+  <h3 class="mb-2 font-semibold text-gray-900 dark:text-white">
+    ما هي عاصمة مصر؟
+  </h3>
+  <ul
+    class="w-full text-sm font-medium text-gray-900 bg-white rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+  >
+    <li
+      class="w-full border-gray-200 mb-2 sm:border-b-0 sm:border-r dark:border-gray-600"
+    >
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-license1"
+          type="radio"
+          value=""
+          name="list-radio"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-license1"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          القاهره
+        </label>
+      </div>
+    </li>
+
+    <li
+      class="w-full border-gray-200 mb-2 sm:border-b-0 sm:border-r dark:border-gray-600"
+    >
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-military1"
+          type="radio"
+          value=""
+          name="list-radio"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-military1"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          الاسكندريه
+        </label>
+      </div>
+    </li>
+    <li class="w-full mb-2 dark:border-gray-600">
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-passport1"
+          type="radio"
+          value=""
+          name="list-radio"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-passport1"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          المنصوره
+        </label>
+      </div>
+    </li>
+  </ul>
 </div>
 
-<ul class="list-unstyled">
-  <li *ngFor="let src of captures; let idx = index" (click)="setPhoto(idx)">
-    <img [src]="src" height="50" />
-  </li>
-</ul> -->
+<!-- item two -->
+<div class="item mt-8">
+  <h3 class="mb-2 font-semibold text-gray-900 dark:text-white">
+    ما هو حاصل جمع (15+17) ؟
+  </h3>
+  <ul
+    class="w-full text-sm font-medium text-gray-900 bg-white rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+  >
+    <li
+      class="w-full border-gray-200 mb-2 sm:border-b-0 sm:border-r dark:border-gray-600"
+    >
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-license2"
+          type="radio"
+          value=""
+          name="list-radio2"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-license2"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          32
+        </label>
+      </div>
+    </li>
 
-<!-- <webcam
-  [height]="0"
-  [width]="0"
-  [trigger]="triggerObservable"
-  (imageCapture)="handleImage($event)"
+    <li
+      class="w-full border-gray-200 mb-2 sm:border-b-0 sm:border-r dark:border-gray-600"
+    >
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-military2"
+          type="radio"
+          value=""
+          name="list-radio2"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-military2"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          33
+        </label>
+      </div>
+    </li>
+    <li class="w-full mb-2 dark:border-gray-600">
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-passport2"
+          type="radio"
+          value=""
+          name="list-radio2"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-passport2"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          30
+        </label>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- item three -->
+<div class="item mt-8">
+  <h3 class="mb-2 font-semibold text-gray-900 dark:text-white">
+    ما هي الفاكهة التي تحتوي على نسبة عالية من فيتامين سي؟
+  </h3>
+  <ul
+    class="w-full text-sm font-medium text-gray-900 bg-white rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+  >
+    <li
+      class="w-full border-gray-200 mb-2 sm:border-b-0 sm:border-r dark:border-gray-600"
+    >
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-license3"
+          type="radio"
+          value=""
+          name="list-radio3"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-license3"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          البطيخ
+        </label>
+      </div>
+    </li>
+
+    <li
+      class="w-full border-gray-200 mb-2 sm:border-b-0 sm:border-r dark:border-gray-600"
+    >
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-military3"
+          type="radio"
+          value=""
+          name="list-radio3"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-military3"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          التفاح
+        </label>
+      </div>
+    </li>
+    <li class="w-full mb-2 dark:border-gray-600">
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-passport3"
+          type="radio"
+          value=""
+          name="list-radio3"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-passport3"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          البرتقال
+        </label>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- item four -->
+<div class="item mt-8">
+  <h3 class="mb-2 font-semibold text-gray-900 dark:text-white">
+    كم عدد الأرجل التي يمتلكها العنكبوت؟
+  </h3>
+  <ul
+    class="w-full text-sm font-medium text-gray-900 bg-white rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+  >
+    <li
+      class="w-full border-gray-200 mb-2 sm:border-b-0 sm:border-r dark:border-gray-600"
+    >
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-license4"
+          type="radio"
+          value=""
+          name="list-radio4"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-license4"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          8
+        </label>
+      </div>
+    </li>
+
+    <li
+      class="w-full border-gray-200 mb-2 sm:border-b-0 sm:border-r dark:border-gray-600"
+    >
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-military4"
+          type="radio"
+          value=""
+          name="list-radio4"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-military4"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          7
+        </label>
+      </div>
+    </li>
+    <li class="w-full mb-2 dark:border-gray-600">
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-passport4"
+          type="radio"
+          value=""
+          name="list-radio4"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-passport4"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          9
+        </label>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- item five -->
+<div class="item mt-8">
+  <h3 class="mb-2 font-semibold text-gray-900 dark:text-white">
+    ما هو الطائر الذي لا يستطيع الطيران؟
+  </h3>
+  <ul
+    class="w-full text-sm font-medium text-gray-900 bg-white rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+  >
+    <li
+      class="w-full border-gray-200 mb-2 sm:border-b-0 sm:border-r dark:border-gray-600"
+    >
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-license5"
+          type="radio"
+          value=""
+          name="list-radio5"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-license5"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          النعامه
+        </label>
+      </div>
+    </li>
+
+    <li
+      class="w-full border-gray-200 mb-2 sm:border-b-0 sm:border-r dark:border-gray-600"
+    >
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-military5"
+          type="radio"
+          value=""
+          name="list-radio5"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-military5"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          العصفور
+        </label>
+      </div>
+    </li>
+    <li class="w-full mb-2 dark:border-gray-600">
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-passport5"
+          type="radio"
+          value=""
+          name="list-radio5"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-passport5"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          الهدهد
+        </label>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- item six -->
+<div class="item mt-8">
+  <h3 class="mb-2 font-semibold text-gray-900 dark:text-white">
+    ما هو الشيء الذي نستطيع أن نراه ولكن لا يمكننا لمسه؟
+  </h3>
+  <ul
+    class="w-full text-sm font-medium text-gray-900 bg-white rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+  >
+    <li
+      class="w-full border-gray-200 mb-2 sm:border-b-0 sm:border-r dark:border-gray-600"
+    >
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-license6"
+          type="radio"
+          value=""
+          name="list-radio6"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-license6"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          الضوء
+        </label>
+      </div>
+    </li>
+
+    <li
+      class="w-full border-gray-200 mb-2 sm:border-b-0 sm:border-r dark:border-gray-600"
+    >
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-military6"
+          type="radio"
+          value=""
+          name="list-radio6"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-military6"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          المياه
+        </label>
+      </div>
+    </li>
+    <li class="w-full mb-2 dark:border-gray-600">
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-passport6"
+          type="radio"
+          value=""
+          name="list-radio6"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-passport6"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          الصخره
+        </label>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- item seven -->
+<div class="item mt-8">
+  <h3 class="mb-2 font-semibold text-gray-900 dark:text-white">
+    ما هو الطائر الذي يستطيع تقليد الأصوات؟
+  </h3>
+  <ul
+    class="w-full text-sm font-medium text-gray-900 bg-white rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+  >
+    <li
+      class="w-full border-gray-200 mb-2 sm:border-b-0 sm:border-r dark:border-gray-600"
+    >
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="showNextWebcam(true)"
+          id="horizontal-list-radio-license7"
+          type="radio"
+          value=""
+          name="list-radio7"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-license7"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          البغباء
+        </label>
+      </div>
+    </li>
+
+    <li
+      class="w-full border-gray-200 mb-2 sm:border-b-0 sm:border-r dark:border-gray-600"
+    >
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-military7"
+          type="radio"
+          value=""
+          name="list-radio7"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-military7"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          البومه
+        </label>
+      </div>
+    </li>
+    <li class="w-full mb-2 dark:border-gray-600">
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-passport7"
+          type="radio"
+          value=""
+          name="list-radio7"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-passport7"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          الهدهد
+        </label>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- item eight -->
+<div class="item mt-8">
+  <h3 class="mb-2 font-semibold text-gray-900 dark:text-white">
+    ما هو الطعام المعروف بكونه جيدًا للبصر؟
+  </h3>
+  <ul
+    class="w-full text-sm font-medium text-gray-900 bg-white rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+  >
+    <li
+      class="w-full border-gray-200 mb-2 sm:border-b-0 sm:border-r dark:border-gray-600"
+    >
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-license8"
+          type="radio"
+          value=""
+          name="list-radio8"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-license8"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          الخيار
+        </label>
+      </div>
+    </li>
+
+    <li
+      class="w-full border-gray-200 mb-2 sm:border-b-0 sm:border-r dark:border-gray-600"
+    >
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-military8"
+          type="radio"
+          value=""
+          name="list-radio8"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-military8"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          الجزر
+        </label>
+      </div>
+    </li>
+    <li class="w-full mb-2 dark:border-gray-600">
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-passport8"
+          type="radio"
+          value=""
+          name="list-radio8"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-passport8"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          الطماطم
+        </label>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- item nine -->
+<div class="item mt-8">
+  <h3 class="mb-2 font-semibold text-gray-900 dark:text-white">
+    ما هو أعلى جبل في العالم؟
+  </h3>
+  <ul
+    class="w-full text-sm font-medium text-gray-900 bg-white rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+  >
+    <li
+      class="w-full border-gray-200 mb-2 sm:border-b-0 sm:border-r dark:border-gray-600"
+    >
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-license9"
+          type="radio"
+          value=""
+          name="list-radio9"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-license9"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          الواحه
+        </label>
+      </div>
+    </li>
+
+    <li
+      class="w-full border-gray-200 mb-2 sm:border-b-0 sm:border-r dark:border-gray-600"
+    >
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-military9"
+          type="radio"
+          value=""
+          name="list-radio9"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-military9"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          المقطم
+        </label>
+      </div>
+    </li>
+    <li class="w-full mb-2 dark:border-gray-600">
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-passport9"
+          type="radio"
+          value=""
+          name="list-radio9"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-passport9"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          ايفرست
+        </label>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- item ten -->
+<div class="item mt-8">
+  <h3 class="mb-2 font-semibold text-gray-900 dark:text-white">
+    ما هو الطعام الحلو الذي تصنعه النحل؟
+  </h3>
+  <ul
+    class="w-full text-sm font-medium text-gray-900 bg-white rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+  >
+    <li
+      class="w-full border-gray-200 mb-2 sm:border-b-0 sm:border-r dark:border-gray-600"
+    >
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-license10"
+          type="radio"
+          value=""
+          name="list-radio10"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-license10"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          العسل
+        </label>
+      </div>
+    </li>
+
+    <li
+      class="w-full border-gray-200 mb-2 sm:border-b-0 sm:border-r dark:border-gray-600"
+    >
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-military10"
+          type="radio"
+          value=""
+          name="list-radio10"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-military10"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          السكر
+        </label>
+      </div>
+    </li>
+    <li class="w-full mb-2 dark:border-gray-600">
+      <div class="ps-3 flex items-center">
+        <input
+          (click)="triggerSnapshot()"
+          id="horizontal-list-radio-passport10"
+          type="radio"
+          value=""
+          name="list-radio10"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+        />
+        <label
+          for="horizontal-list-radio-passport10"
+          class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          القصب
+        </label>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<button
+  (click)="submit()"
+  type="button"
+  class="mt-8 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
 >
-</webcam> -->
+  تسجيل الاجابه
+</button>
 
 <div style="height: 0; width: 0; overflow: hidden">
   <div>

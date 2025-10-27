@@ -7,7 +7,6 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { MapComponent } from '../../shared/components/map/map.component';
 import { TranslocoModule } from '@jsverse/transloco';
 import { addDoc, collection, Firestore } from '@angular/fire/firestore';
 import { ToastrModule } from 'ngx-toastr';
@@ -19,7 +18,6 @@ import { Router } from '@angular/router';
     CommonModule,
     NgSelectModule,
     FormsModule,
-    MapComponent,
     TranslocoModule,
     FormsModule,
     ReactiveFormsModule,
@@ -103,6 +101,7 @@ export class ContactUsComponent implements OnInit {
 
   async submitForm() {
     const value = this.contactForm.value;
+    localStorage.setItem('userName', this.contactForm.controls['name'].value);
     const usersData = collection(this.firestore, 'users_data');
     await addDoc(usersData, { ...value, createdAt: new Date() })
       .then((res) => {

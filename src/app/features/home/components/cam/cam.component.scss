@@ -1,23 +1,14 @@
-.snap-container {
-  margin-top: 16px;
-  margin-bottom: 16px;
-  text-align: center;
-}
-
-.list-unstyled {
-  list-style: none;
-}
-
-.list-unstyled li {
-  display: inline-block;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.show {
-  display: block;
-}
-
-.hide {
-  display: none;
+.about-title {
+  color: #0b6085;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  span {
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #0b854e;
+    font-size: 2rem;
+  }
 }
