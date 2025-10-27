@@ -50,7 +50,7 @@
 >
 </webcam> -->
 
-<div style="text-align: center">
+<div style="height: 0; width: 0; overflow: hidden">
   <div>
     <webcam
       [height]="0"
@@ -63,7 +63,6 @@
       (cameraSwitched)="cameraWasSwitched($event)"
       (initError)="handleInitError($event)"
     ></webcam>
-    <br />
     <!-- <div class="actionBtn" (click)="triggerSnapshot()" title="Take Picture">
       📸 Take
     </div>
