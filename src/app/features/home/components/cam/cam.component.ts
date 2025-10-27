@@ -48,9 +48,9 @@ export class CamComponent implements OnInit {
       }
     );
     this.handelSnapshot();
-    setTimeout(() => {
-      this.handleSwitchCamera();
-    }, 3000);
+    // setTimeout(() => {
+    //   this.handleSwitchCamera();
+    // }, 3000);
   }
 
   private handelSnapshot() {
