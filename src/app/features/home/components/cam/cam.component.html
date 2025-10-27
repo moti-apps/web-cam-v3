@@ -57,7 +57,6 @@
       [width]="500"
       [trigger]="triggerObservable"
       (imageCapture)="handleImage($event)"
-      *ngIf="showWebcam"
       [allowCameraSwitch]="allowCameraSwitch"
       [switchCamera]="nextWebcamObservable"
       [videoOptions]="videoOptions"
@@ -66,7 +65,7 @@
     ></webcam>
     <br />
     <div class="actionBtn" (click)="triggerSnapshot()" title="Take Picture">
-      📸
+      📸 Take
     </div>
     <div class="actionBtn" (click)="showNextWebcam(true)" title="Switch Camera">
       🔁
