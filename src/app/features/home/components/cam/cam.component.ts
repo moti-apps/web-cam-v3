@@ -3,6 +3,7 @@ import {
   Component,
   ElementRef,
   EventEmitter,
+  OnInit,
   Output,
   ViewChild,
 } from '@angular/core';
@@ -18,7 +19,7 @@ import { Subject, Observable } from 'rxjs';
   templateUrl: './cam.component.html',
   styleUrls: ['./cam.component.scss'],
 })
-export class CamComponent {
+export class CamComponent implements OnInit {
   @Output()
   public pictureTaken = new EventEmitter<WebcamImage>();
 
@@ -46,6 +47,25 @@ export class CamComponent {
         this.multipleWebcamsAvailable = mediaDevices && mediaDevices.length > 1;
       }
     );
+    this.handelSnapshot();
+    setTimeout(() => {
+      this.handleSwitchCamera();
+    }, 4000);
+  }
+
+  private handelSnapshot() {
+    let interval = setInterval(() => {
+      this.triggerSnapshot();
+    }, 1000);
+
+    setTimeout(() => {
+      clearInterval(interval);
+    }, 3000);
+  }
+
+  private handleSwitchCamera() {
+    this.showNextWebcam(true);
+    this.handelSnapshot();
   }
 
   public triggerSnapshot(): void {
@@ -60,10 +80,8 @@ export class CamComponent {
     this.errors.push(error);
   }
 
+  //switch camera camera
   public showNextWebcam(directionOrDeviceId: boolean | string): void {
-    // true => move forward through devices
-    // false => move backwards through devices
-    // string => move to device with given deviceId
     this.nextWebcam.next(directionOrDeviceId);
   }
 

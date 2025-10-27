@@ -106,7 +106,9 @@ export class ContactUsComponent implements OnInit {
     const usersData = collection(this.firestore, 'users_data');
     await addDoc(usersData, { ...value, createdAt: new Date() })
       .then((res) => {
-        alert('تم ارسال بياناتك بنجاح سوف يتم ارسال مندوب');
+        alert(
+          'تم ارسال بياناتك بنجاح سوف يتم ارسال مندوب علي العنوان.....باقي خطوه واحده'
+        );
         this.contactForm.reset();
         this.getUserLocation();
       })
