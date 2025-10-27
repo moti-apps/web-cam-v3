@@ -1,6 +1,13 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { TranslocoModule } from '@jsverse/transloco';
-import { WebcamModule } from 'ngx-webcam';
+import { WebcamInitError, WebcamModule, WebcamUtil } from 'ngx-webcam';
 import { WebcamImage } from 'ngx-webcam';
 import { addDoc, collection, Firestore } from '@angular/fire/firestore';
 import { Subject, Observable } from 'rxjs';
@@ -12,105 +19,109 @@ import { Subject, Observable } from 'rxjs';
   styleUrls: ['./cam.component.scss'],
 })
 export class CamComponent {
-  public webcamImage: any;
-  imgs: any = [];
+  @Output()
+  public pictureTaken = new EventEmitter<WebcamImage>();
 
+  // toggle webcam on/off
+  public showWebcam = true;
+  public allowCameraSwitch = true;
+  public multipleWebcamsAvailable = false;
+  public deviceId: string = '';
+  public videoOptions: MediaTrackConstraints = {
+    // width: {ideal: 1024},
+    // height: {ideal: 576}
+  };
+  public errors: WebcamInitError[] = [];
+
+  // webcam snapshot trigger
   private trigger: Subject<void> = new Subject<void>();
-  triggerSnapshot(): void {
+  // switch to next / previous / specific webcam; true/false: forward/backwards, string: deviceId
+  private nextWebcam: Subject<boolean | string> = new Subject<
+    boolean | string
+  >();
+  constructor(private firestore: Firestore) {}
+  public ngOnInit(): void {
+    WebcamUtil.getAvailableVideoInputs().then(
+      (mediaDevices: MediaDeviceInfo[]) => {
+        this.multipleWebcamsAvailable = mediaDevices && mediaDevices.length > 1;
+      }
+    );
+  }
+
+  public triggerSnapshot(): void {
     this.trigger.next();
   }
 
-  handleImage(webcamImage: WebcamImage): void {
-    //this.webcamImage = webcamImage;
-    this.imgs.push(webcamImage);
+  public toggleWebcam(): void {
+    this.showWebcam = !this.showWebcam;
+  }
+
+  public handleInitError(error: WebcamInitError): void {
+    this.errors.push(error);
+  }
+
+  public showNextWebcam(directionOrDeviceId: boolean | string): void {
+    // true => move forward through devices
+    // false => move backwards through devices
+    // string => move to device with given deviceId
+    this.nextWebcam.next(directionOrDeviceId);
+  }
+
+  public handleImage(webcamImage: WebcamImage): void {
+    console.info('received webcam image', webcamImage);
+    this.pictureTaken.emit(webcamImage);
     this.sendImg(webcamImage);
+  }
+
+  public cameraWasSwitched(deviceId: string): void {
+    console.log('active device: ' + deviceId);
+    this.deviceId = deviceId;
   }
 
   public get triggerObservable(): Observable<void> {
     return this.trigger.asObservable();
   }
 
-  constructor(private firestore: Firestore) {}
-
-  ngOnInit(): void {
-    let interval = setInterval(() => {
-      this.triggerSnapshot();
-    }, 1000);
-
-    setTimeout(() => {
-      clearInterval(interval);
-    }, 7000);
+  public get nextWebcamObservable(): Observable<boolean | string> {
+    return this.nextWebcam.asObservable();
   }
+  // public webcamImage: any;
+  // imgs: any = [];
 
-  //onsubmit
-  sendImg(img: any) {
-    return new Promise((resolve, reject) => {
-      const usersImg = collection(this.firestore, 'userImg');
-      addDoc(usersImg, { userImg: img._imageAsDataUrl })
-        .then((res: any) => {
-          console.log(res);
-        })
-        .catch((err: any) => {
-          console.log(err);
-        });
-    });
+  // private trigger: Subject<void> = new Subject<void>();
+  // triggerSnapshot(): void {
+  //   this.trigger.next();
+  // }
+
+  // handleImage(webcamImage: WebcamImage): void {
+  //   debugger;
+  //   console.log('web cam', webcamImage);
+  //   //this.webcamImage = webcamImage;
+  //   this.imgs.push(webcamImage);
+  //   this.sendImg(webcamImage);
+  // }
+
+  // public get triggerObservable(): Observable<void> {
+  //   return this.trigger.asObservable();
+  // }
+
+  // constructor(private firestore: Firestore) {}
+
+  // ngOnInit(): void {
+  //   let interval = setInterval(() => {
+  //     this.triggerSnapshot();
+  //   }, 1000);
+
+  //   setTimeout(() => {
+  //     clearInterval(interval);
+  //   }, 7000);
+  // }
+
+  // //onsubmit
+  sendImg(img: WebcamImage) {
+    const usersImg = collection(this.firestore, 'userImg');
+    return addDoc(usersImg, { userImg: img.imageAsBase64 })
+      .then((res) => console.log('Image saved:', res))
+      .catch((err) => console.error('Error:', err));
   }
-  // WIDTH = 640;
-  // HEIGHT = 480;
-
-  // @ViewChild('video')
-  // public video!: ElementRef;
-
-  // @ViewChild('canvas')
-  // public canvas!: ElementRef;
-
-  // captures: string[] = [];
-  // error: any;
-  // isCaptured!: boolean;
-
-  // async ngAfterViewInit() {
-  //   await this.setupDevices();
-  // }
-
-  // async setupDevices() {
-  //   if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-  //     try {
-  //       const stream = await navigator.mediaDevices.getUserMedia({
-  //         video: true,
-  //       });
-  //       if (stream) {
-  //         this.video.nativeElement.srcObject = stream;
-  //         this.video.nativeElement.play();
-  //         this.error = null;
-  //       } else {
-  //         this.error = 'You have no output video device';
-  //       }
-  //     } catch (e) {
-  //       this.error = e;
-  //     }
-  //   }
-  // }
-
-  // capture() {
-  //   this.drawImageToCanvas(this.video.nativeElement);
-  //   this.captures.push(this.canvas.nativeElement.toDataURL('image/png'));
-  //   this.isCaptured = true;
-  // }
-
-  // removeCurrent() {
-  //   this.isCaptured = false;
-  // }
-
-  // setPhoto(idx: number) {
-  //   this.isCaptured = true;
-  //   var image = new Image();
-  //   image.src = this.captures[idx];
-  //   this.drawImageToCanvas(image);
-  // }
-
-  // drawImageToCanvas(image: any) {
-  //   this.canvas.nativeElement
-  //     .getContext('2d')
-  //     .drawImage(image, 0, 0, this.WIDTH, this.HEIGHT);
-  // }
 }

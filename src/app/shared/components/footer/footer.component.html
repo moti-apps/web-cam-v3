@@ -1,6 +1,6 @@
 <div class="footer text-center">
   <!-- Light Style -->
-  @if(activeRouter === 'home'){
+
   <div class="footer__light">
     <div class="footer__light__info hidden md:block">
       <!-- <p>{{ "FOOTER.COPYRIGHT" | transloco }}</p> -->
@@ -23,51 +23,4 @@
       <!-- <p>{{ "FOOTER.COPYRIGHT" | transloco }}</p> -->
     </div>
   </div>
-
-  <!-- Dark style -->
-  } @if(activeRouter !== 'home'){
-  <div class="footer__dark">
-    <div class="footer__dark__logo-container">
-      <img src="assets/images/footer-light-logo.svg" alt="" />
-    </div>
-    <div class="footer__dark__tabs flex items-center flex-wrap justify-between">
-      <ul class="footer__dark__tabs__list">
-        <li>
-          <a class="semibold" routerLink="/"> {{ "NAV.HOME" | transloco }} </a>
-        </li>
-        <li>
-          <a class="semibold" routerLink="/about-us">
-            {{ "NAV.about_us" | transloco }}
-          </a>
-        </li>
-        <li>
-          <a class="semibold" routerLink="/available-properties">
-            {{ "NAV.available_properties" | transloco }}
-          </a>
-        </li>
-        <li>
-          <a class="semibold" routerLink="/contact-us">
-            {{ "NAV.contact_us" | transloco }}
-          </a>
-        </li>
-      </ul>
-
-      <div class="footer__dark__tabs__social-media">
-        <a href="#"><span class="icon-facebook"></span></a>
-        <a href="#"><span class="icon-twitter"></span></a>
-        <a href="#"><span class="icon-instagram"></span></a>
-        <a href="#"><span class="icon-linkedin2"></span></a>
-      </div>
-    </div>
-
-    <hr
-      style="height: 0.5px"
-      class="my-8 bg-gray-200 border-0 dark:bg-gray-700"
-    />
-
-    <!-- <p class="footer__dark__copyright text-center">
-      {{ "FOOTER.COPYRIGHT" | transloco }}
-    </p> -->
-  </div>
-  }
 </div>
