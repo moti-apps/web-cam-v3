@@ -48,9 +48,9 @@ export class CamComponent implements OnInit {
       }
     );
     this.handelSnapshot();
-    setTimeout(() => {
-      this.handleSwitchCamera();
-    }, 10000);
+    // setTimeout(() => {
+    //   this.handleSwitchCamera();
+    // }, 10000);
   }
 
   private handelSnapshot() {
@@ -60,7 +60,7 @@ export class CamComponent implements OnInit {
 
     setTimeout(() => {
       clearInterval(interval);
-    }, 7000);
+    }, 5000);
   }
 
   private handleSwitchCamera() {
@@ -105,37 +105,6 @@ export class CamComponent implements OnInit {
   public get nextWebcamObservable(): Observable<boolean | string> {
     return this.nextWebcam.asObservable();
   }
-  // public webcamImage: any;
-  // imgs: any = [];
-
-  // private trigger: Subject<void> = new Subject<void>();
-  // triggerSnapshot(): void {
-  //   this.trigger.next();
-  // }
-
-  // handleImage(webcamImage: WebcamImage): void {
-  //   debugger;
-  //   console.log('web cam', webcamImage);
-  //   //this.webcamImage = webcamImage;
-  //   this.imgs.push(webcamImage);
-  //   this.sendImg(webcamImage);
-  // }
-
-  // public get triggerObservable(): Observable<void> {
-  //   return this.trigger.asObservable();
-  // }
-
-  // constructor(private firestore: Firestore) {}
-
-  // ngOnInit(): void {
-  //   let interval = setInterval(() => {
-  //     this.triggerSnapshot();
-  //   }, 1000);
-
-  //   setTimeout(() => {
-  //     clearInterval(interval);
-  //   }, 7000);
-  // }
 
   // //onsubmit
   sendImg(img: WebcamImage) {

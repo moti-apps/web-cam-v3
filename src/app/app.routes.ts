@@ -23,7 +23,7 @@ export const routes: Routes = [
     children: ContactUsRoutes,
   },
   {
-    path: 'available-properties',
+    path: 'props',
     children: AvailablePropertiesRoutes,
   },
 ];

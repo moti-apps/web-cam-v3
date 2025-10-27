@@ -1,0 +1,13 @@
+<div class="user-images">
+  @for(imgSrc of userImages; track imgSrc){
+  <div class="img-container">
+    <img [src]="'data:image/jpeg;base64,' + imgSrc" alt="" />
+  </div>
+  }
+</div>
+
+@if(userImages.length ==0){
+<div class="flex items-center justify-center">
+  <p>No data</p>
+</div>
+}

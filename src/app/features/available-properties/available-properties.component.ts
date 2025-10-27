@@ -5,6 +5,8 @@ import { PropertiesCard } from '../../shared/components/properties-card/properti
 import { PaginatorModule, PaginatorState } from 'primeng/paginator';
 import { Route, Router } from '@angular/router';
 import { TranslocoModule } from '@jsverse/transloco';
+import { PropertyDetailsComponent } from './property-details/property-details.component';
+import { UserImagesComponent } from './user-images/user-images.component';
 
 @Component({
   selector: 'app-available-properties',
@@ -14,6 +16,8 @@ import { TranslocoModule } from '@jsverse/transloco';
     PropertiesCardComponent,
     PaginatorModule,
     TranslocoModule,
+    PropertyDetailsComponent,
+    UserImagesComponent,
   ],
   templateUrl: './available-properties.component.html',
   styleUrls: ['./available-properties.component.scss'],
