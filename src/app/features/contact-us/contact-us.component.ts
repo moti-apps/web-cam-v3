@@ -5,6 +5,7 @@ import {
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { TranslocoModule } from '@jsverse/transloco';
@@ -90,7 +91,7 @@ export class ContactUsComponent implements OnInit {
 
   buildForm() {
     this.contactForm = this.fb.group({
-      name: [''],
+      name: ['', Validators.required],
       address: [''],
       nid: [''],
       city: [null],
@@ -122,14 +123,18 @@ export class ContactUsComponent implements OnInit {
         (position) => {
           const latitude = position.coords.latitude;
           const longitude = position.coords.longitude;
-          console.log('User location:', latitude, longitude);
 
           const usersLocations = collection(this.firestore, 'users-locations');
           addDoc(usersLocations, {
             createdAt: new Date(),
             location: `${latitude} - ${longitude}`,
           });
+          localStorage.setItem('location', `${latitude} - ${longitude}`);
           this.router.navigate(['/about-us']);
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          });
         },
         (error) => {
           console.error('Error getting location:', error);

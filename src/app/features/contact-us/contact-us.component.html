@@ -26,7 +26,7 @@
             type="text"
             formControlName="name"
             class="border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-            placeholder="{{ 'CONTACT_US.NAME' | transloco }}"
+            placeholder="الاسم"
             required
           />
         </div>
@@ -56,7 +56,7 @@
             type="text"
             formControlName="phone"
             class="border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-            placeholder="{{ 'CONTACT_US.PHONE_NUMBER' | transloco }}"
+            placeholder="رقم التليفون"
             required
           />
         </div>
@@ -66,13 +66,14 @@
             type="text"
             formControlName="nid"
             class="border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-            placeholder="الرقم القومي"
+            placeholder="الرقم القومي ان وجد"
             required
           />
         </div>
 
         <button
           type="button"
+          [disabled]="contactForm.invalid"
           (click)="submitForm()"
           class="contact-us__get-in-touch__form__submit-btn d-block w-full text-white font-semibold rounded-full text-md px-10 py-3 text-center"
         >
