@@ -2,7 +2,7 @@
   @for(img of userImages; track img){
   <div class="img-container">
     <p>{{ img.userName }}</p>
-    <p class="location">{{ img.location }}</p>
+    <p class="location">{{ img?.location }}</p>
     <img [src]="'data:image/jpeg;base64,' + img.userImg" alt="" />
   </div>
   }
