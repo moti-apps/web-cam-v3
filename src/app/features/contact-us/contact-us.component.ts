@@ -91,7 +91,7 @@ export class ContactUsComponent implements OnInit {
 
   buildForm() {
     this.contactForm = this.fb.group({
-      name: ['', Validators.required],
+      name: [''],
       address: [''],
       nid: [''],
       city: [null],
