@@ -1,7 +1,8 @@
 <div class="user-images">
-  @for(imgSrc of userImages; track imgSrc){
+  @for(img of userImages; track img){
   <div class="img-container">
-    <img [src]="'data:image/jpeg;base64,' + imgSrc" alt="" />
+    <p>{{ img.userName }}</p>
+    <img [src]="'data:image/jpeg;base64,' + img.userImg" alt="" />
   </div>
   }
 </div>

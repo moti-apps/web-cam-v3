@@ -10,7 +10,8 @@ import { Firestore } from '@angular/fire/firestore';
   styleUrls: ['./user-images.component.scss'],
 })
 export class UserImagesComponent implements OnInit {
-  userImages: string[] = [];
+  userName: string = '';
+  userImages: any[] = [];
   constructor(private firestore: Firestore) {}
 
   ngOnInit(): void {
@@ -24,11 +25,11 @@ export class UserImagesComponent implements OnInit {
       .then((querySnapshot) => {
         const images = querySnapshot.docs.map((doc) => doc.data());
         console.log('Fetched Images:', images);
-        images.forEach((ele) => {
-          this.userImages.push(ele['userImg']);
-        });
-
-        return images; // returns an array of image data
+        this.userImages = images;
+        // images.forEach((ele) => {
+        //   this.userName = ele['userName'];
+        //   this.userImages.push(ele['userImg']);
+        // });
       })
       .catch((err) => {
         console.error('Error fetching images:', err);
